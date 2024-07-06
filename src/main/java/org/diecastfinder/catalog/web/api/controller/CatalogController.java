@@ -27,7 +27,7 @@ public class CatalogController {
     }
 
     @PostMapping
-    public ResponseEntity saveModel(@RequestBody FoundModelDto foundModel) {
+    public ResponseEntity<List<CatalogModelDto>> saveModel(@RequestBody FoundModelDto foundModel) {
         // todo check guru prj with few models from different services
         CatalogModelDto savedModel = catalogService.saveNewModel(foundModel);
         HttpHeaders headers = new HttpHeaders();
@@ -35,7 +35,7 @@ public class CatalogController {
         // todo update to real host name
         headers.add("Location", "http://localhost:8080/api/v1/catalog/" + savedModel.getUri());
 
-        return new ResponseEntity(headers, HttpStatus.CREATED);
+        return new ResponseEntity<>(headers, HttpStatus.CREATED);
     }
 
 }
