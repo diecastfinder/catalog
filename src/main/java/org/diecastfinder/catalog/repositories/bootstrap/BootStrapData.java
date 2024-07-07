@@ -18,7 +18,7 @@ public class BootStrapData implements CommandLineRunner {
     }
 
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
         if (repository.count() < 1) {
             CatalogModel cm1 = CatalogModel.builder()
                 .uri("www.olxx.com")
