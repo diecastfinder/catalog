@@ -1,12 +1,13 @@
 # Catalog
 Catalog service to report about found models and keep them in DB
 
-## Project tech stack 
+## Project tech stack
 Java 17, 
 Spring boot
 
 Spring JPA
 H2 in memory DB,
+or MariaDB
 
 ## Used patterns and approaches.
 * Microservices
@@ -20,7 +21,9 @@ Run [CatalogApplication.java](src%2Fmain%2Fjava%2Forg%2Fdiecastfinder%2Fcatalog%
 open [application.properties](src%2Fmain%2Fresources%2Fapplication.properties) and update server.port parameter.
 
 ### set DB
-TBD
+This is a responsibility of property files. 
+* [application.properties](src%2Fmain%2Fresources%2Fapplication.properties) default profile that starts H2 in memory DB.
+* [application-mariadb.properties](src%2Fmain%2Fresources%2Fapplication-mariadb.properties) MariaDB profile, add 'mariadb' to Active Profiles in Run/Debug Configurations.
 
 ## How to pre-populate DB
 In order to start on non-empty DB, open [BootStrapData.java](src%2Fmain%2Fjava%2Forg%2Fdiecastfinder%2Fcatalog%2Frepositories%2Fbootstrap%2FBootStrapData.java)
