@@ -11,7 +11,8 @@ or MariaDB
 
 ## Used patterns and approaches.
 * Microservices
-* Repositories for working with DB
+* Repositories (JPA/Hibernate) for working with DB
+* Mapstruct to convert POJOs between domain (DB) model and API model.  
 * Message queue: ActiveMQ
 
 ## #How to run application

@@ -5,7 +5,7 @@ import org.diecastfinder.catalog.web.model.CatalogModelDto;
 import org.diecastfinder.catalog.web.model.FoundModelDto;
 
 public interface CatalogService {
-    List<CatalogModelDto> getAllFoundModels();
+    List<CatalogModelDto> getAllFoundModels(Boolean isOnlyActive);
 
     CatalogModelDto saveNewModel(FoundModelDto foundModel);
 
