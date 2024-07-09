@@ -42,7 +42,6 @@ public class CatalogModel {
     private String producer;
     private Integer price;
     private String currency;
-    private Timestamp firstFoundDate;
     private Boolean isFavourite;
     private Boolean isActive;
 }

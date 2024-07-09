@@ -1,6 +1,5 @@
 package org.diecastfinder.catalog.web.model;
 
-import java.sql.Timestamp;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -21,7 +20,6 @@ public class CatalogModelDto {
     private String producer;
     private Integer price;
     private String currency;
-    private Timestamp firstFoundDate;
     private Boolean isFavourite;
     private Boolean isActive;
 }

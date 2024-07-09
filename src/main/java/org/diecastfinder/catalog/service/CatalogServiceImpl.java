@@ -1,7 +1,5 @@
 package org.diecastfinder.catalog.service;
 
-import java.sql.Timestamp;
-import java.time.Instant;
 import java.util.List;
 import java.util.Objects;
 import lombok.RequiredArgsConstructor;
@@ -9,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.diecastfinder.catalog.repositories.CatalogModelRepository;
 import org.diecastfinder.catalog.repositories.domain.CatalogModel;
 import org.diecastfinder.catalog.web.mappers.CatalogModelMapper;
+import org.diecastfinder.catalog.web.mappers.FoundModelDtoMapper;
 import org.diecastfinder.catalog.web.model.CatalogModelDto;
 import org.diecastfinder.catalog.web.model.FoundModelDto;
 import org.springframework.stereotype.Service;
@@ -19,7 +18,8 @@ import org.springframework.stereotype.Service;
 public class CatalogServiceImpl implements CatalogService {
 
     private final CatalogModelRepository repository;
-    private final CatalogModelMapper mapper;
+    private final CatalogModelMapper catalogModelMapper;
+    private final FoundModelDtoMapper foundModelDtoMapper;
 
     @Override
     public List<CatalogModelDto> getAllFoundModels(Boolean isOnlyActive) {
@@ -33,25 +33,16 @@ public class CatalogServiceImpl implements CatalogService {
         }
 
         return models.stream()
-            .map(mapper::catalogModelToCatalogModelDto)
+            .map(catalogModelMapper::catalogModelToCatalogModelDto)
             .toList();
     }
 
     @Override
     public CatalogModelDto saveNewModel(FoundModelDto foundModel) {
-        //Todo update to real insert to DB
-        log.debug("Saving model...");
-        return CatalogModelDto.builder()
-            .uri(foundModel.getUri())
-            .nameRequested(foundModel.getNameRequested())
-            .producer(foundModel.getProducer())
-            .price(foundModel.getPrice())
-            .currency(foundModel.getCurrency())
-            .firstFoundDate(Timestamp.from(Instant.now()))
-            .isActive(true)
-            .isFavourite(false)
-            .lotTitle(foundModel.getLotTitle())
-            .build();
-    }
+        CatalogModel model = foundModelDtoMapper.foundModelDtoToCatalogModel(foundModel);
+        repository.save(model);
 
+        CatalogModelDto modelDto = catalogModelMapper.catalogModelToCatalogModelDto(model);
+        return modelDto;
+    }
 }
