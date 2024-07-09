@@ -29,7 +29,6 @@ public class CatalogController {
 
     @PostMapping
     public ResponseEntity<List<CatalogModelDto>> saveModel(@RequestBody FoundModelDto foundModel) {
-        // todo check guru prj with few models from different services
         CatalogModelDto savedModel = catalogService.saveNewModel(foundModel);
         HttpHeaders headers = new HttpHeaders();
 
