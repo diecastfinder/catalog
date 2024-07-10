@@ -7,7 +7,6 @@ import org.diecastfinder.catalog.service.CatalogService;
 import org.diecastfinder.catalog.web.model.FoundModelDto;
 import org.diecastfinder.model.AddModelEvent;
 import org.springframework.jms.annotation.JmsListener;
-import org.springframework.jms.core.JmsTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -16,7 +15,6 @@ import org.springframework.transaction.annotation.Transactional;
 @Slf4j
 public class AddModelListener {
 
-    private final JmsTemplate jmsTemplate;
     private final CatalogService catalogService;
 
     @Transactional
