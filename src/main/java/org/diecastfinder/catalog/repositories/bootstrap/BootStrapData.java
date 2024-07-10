@@ -1,8 +1,5 @@
 package org.diecastfinder.catalog.repositories.bootstrap;
 
-import java.sql.Timestamp;
-import java.time.Instant;
-import java.time.temporal.ChronoUnit;
 import org.diecastfinder.catalog.repositories.CatalogModelRepository;
 import org.diecastfinder.catalog.repositories.domain.CatalogModel;
 import org.springframework.boot.CommandLineRunner;
@@ -27,7 +24,6 @@ public class BootStrapData implements CommandLineRunner {
                 .producer("Autoart")
                 .price(699)
                 .currency("zl")
-                .firstFoundDate(Timestamp.from(Instant.now().minus(2, ChronoUnit.DAYS)))
                 .isFavourite(true)
                 .isActive(true)
                 .build();
@@ -41,7 +37,6 @@ public class BootStrapData implements CommandLineRunner {
                 .producer("Autoart")
                 .price(800)
                 .currency("zl")
-                .firstFoundDate(Timestamp.from(Instant.now().minus(200, ChronoUnit.DAYS)))
                 .isFavourite(false)
                 .isActive(false)
                 .build();

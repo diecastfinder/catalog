@@ -37,5 +37,4 @@ public class CatalogController {
 
         return new ResponseEntity<>(headers, HttpStatus.CREATED);
     }
-
 }
