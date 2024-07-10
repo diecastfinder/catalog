@@ -13,7 +13,7 @@ import org.diecastfinder.catalog.web.model.FoundModelDto;
 @Builder
 public class AddModelEvent implements Serializable {
 
-    static final long serialVersionUID = -5226814208277322666L;
+    private static final long serialVersionUID = -5226814208277322666L;
     private FoundModelDto foundModelDto;
 
 }
