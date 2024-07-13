@@ -1,4 +1,4 @@
-package org.diecastfinder.catalog.web.model;
+package org.diecastfinder.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

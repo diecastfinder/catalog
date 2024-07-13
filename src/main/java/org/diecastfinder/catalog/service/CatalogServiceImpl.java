@@ -9,7 +9,7 @@ import org.diecastfinder.catalog.repositories.domain.CatalogModel;
 import org.diecastfinder.catalog.web.mappers.CatalogModelMapper;
 import org.diecastfinder.catalog.web.mappers.FoundModelDtoMapper;
 import org.diecastfinder.catalog.web.model.CatalogModelDto;
-import org.diecastfinder.catalog.web.model.FoundModelDto;
+import org.diecastfinder.model.FoundModelDto;
 import org.springframework.stereotype.Service;
 
 @Slf4j

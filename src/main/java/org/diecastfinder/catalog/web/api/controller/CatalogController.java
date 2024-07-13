@@ -3,7 +3,7 @@ package org.diecastfinder.catalog.web.api.controller;
 import java.util.List;
 import org.diecastfinder.catalog.service.CatalogService;
 import org.diecastfinder.catalog.web.model.CatalogModelDto;
-import org.diecastfinder.catalog.web.model.FoundModelDto;
+import org.diecastfinder.model.FoundModelDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
