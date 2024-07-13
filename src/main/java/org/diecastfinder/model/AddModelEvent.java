@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.diecastfinder.catalog.web.model.FoundModelDto;
 
 @Data
 @AllArgsConstructor
