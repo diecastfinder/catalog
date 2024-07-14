@@ -40,6 +40,7 @@ public class CatalogServiceImpl implements CatalogService {
     @Override
     public CatalogModelDto saveNewModel(FoundModelDto foundModel) {
         CatalogModel model = foundModelDtoMapper.foundModelDtoToCatalogModel(foundModel);
+        model.setIsActive(true);
         repository.save(model);
 
         CatalogModelDto modelDto = catalogModelMapper.catalogModelToCatalogModelDto(model);

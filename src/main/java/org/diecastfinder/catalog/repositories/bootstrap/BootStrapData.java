@@ -16,7 +16,7 @@ public class BootStrapData implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-//        if (repository.count() < 1) {
+        if (repository.count() < 1) {
             CatalogModel cm1 = CatalogModel.builder()
                 .uri("www.olxx.com")
                 .nameRequested("McLaren P1")
@@ -42,7 +42,7 @@ public class BootStrapData implements CommandLineRunner {
                 .build();
 
             repository.save(cm2);
-//        }
+        }
 
         System.out.println("Started in bootstrap");
         System.out.println("Number of models: " + repository.count());
