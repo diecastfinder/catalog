@@ -32,6 +32,7 @@ public class CatalogServiceImpl implements CatalogService {
             models = repository.findAll();
         }
 
+        log.debug(String.format("Found %d models", models.size()));
         return models.stream()
             .map(catalogModelMapper::catalogModelToCatalogModelDto)
             .toList();
